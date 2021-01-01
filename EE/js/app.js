@@ -31,7 +31,7 @@ _eStartButton.addEventListener('click', e => {
 	setTimeout(() => {
 		_sEvent.play();
 		_eBackdrop.classList.add('gf');
-		setTimeout(() => _eBackdrop.classList.remove('gf'), 75);
+		setTimeout(() => _eBackdrop.classList.remove('gf'), 250);
 		_sAmbience3.play();
 	}, _iEventAudioDelay);
 	
