@@ -1,0 +1,86 @@
+@keyframes bite {
+	100% { background-position: -16416px 0; }
+}
+
+@keyframes open {
+	100% { background-position: -11268px 0; }
+}
+
+@keyframes close {
+	0% { background-position: -10244px 0; }
+	100% { background-position: 0 0; }
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #000;
+}
+
+.backdrop {
+	position: relative;
+
+	display: block;
+	width: 1024px;
+	height: 768px;
+
+	background-image: url('../img/backdrop.png');
+	background-size: cover;
+	background-position: center;
+}
+
+.backdrop.gf {
+	background-image: url('../img/backdrop-gf.png');
+}
+
+.backdrop > .mangle {
+	position: absolute;
+	
+	width: 1024px;
+	height: 768px;
+
+	background: url('../img/mangle/animation.png') 0 0 no-repeat;
+	background-size: cover;
+	opacity: 0;
+}
+
+.backdrop > .mangle.bite {
+	opacity: 1;
+	animation: bite 0.75s steps(16) forwards;
+}
+
+.backdrop > .monitor {
+	position: absolute;
+	
+	width: 1024px;
+	height: 768px;
+
+	background: url('../img/monitor/animation.png') 0 0 no-repeat;
+	background-size: cover;
+	opacity: 0;
+}
+
+.backdrop > .monitor.open {
+	opacity: 1;
+	animation: open 0.45s steps(11) forwards;
+}
+
+.backdrop > .monitor.opened {
+	opacity: 1;
+	background-position: -10244px;
+}
+
+.backdrop > .monitor.close {
+	opacity: 1;
+	animation: close 0.5s steps(10) forwards;
+}
