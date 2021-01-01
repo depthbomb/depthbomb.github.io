@@ -1,8 +1,7 @@
 const _aImages = [
-	'../img/mangle/animation.png',
-	'../img/monitor/opened.png',
-	'../img/monitor/animation.png',
-	'../img/backdrop-gf.png',
+	'/EE/img/mangle/animation.png',
+	'/EE/img/monitor/opened.png',
+	'/EE/img/monitor/animation.png',
 ];
 const _aPreloadedImages = [];
 const chance = new Chance();
@@ -10,11 +9,11 @@ const _eStartButton = document.querySelector('.start');
 const _eBackdrop = document.querySelector('.backdrop');
 const _eMonitor = document.querySelector('.monitor');
 const _eMangle = document.querySelector('.mangle');
-const _sAmbience1 = new Howl({ src: ['./audio/ambience.mp3'], loop: true, autoplay: false });
-const _sAmbience2 = new Howl({ src: ['./audio/ambience2.mp3'], autoplay: false });
-const _sAmbience3 = new Howl({ src: ['./audio/ambience3.mp3'], loop: true, autoplay: false });
-const _sEvent = new Howl({ src: ['./audio/event.mp3'], loop: true, autoplay: false });
-const _sJumpscare = new Howl({ src: ['./audio/jumpscare.mp3'], loop: false, autoplay: false });
+const _sAmbience1 = new Howl({ src: ['/EE/audio/ambience.mp3'], loop: true, autoplay: false });
+const _sAmbience2 = new Howl({ src: ['/EE/audio/ambience2.mp3'], autoplay: false });
+const _sAmbience3 = new Howl({ src: ['/EE/audio/ambience3.mp3'], loop: true, autoplay: false });
+const _sEvent = new Howl({ src: ['/EE/audio/event.mp3'], loop: true, autoplay: false });
+const _sJumpscare = new Howl({ src: ['/EE/audio/jumpscare.mp3'], loop: false, autoplay: false });
 const _iEventAudioDelay = chance.integer({ min: 1, max: 10000 });
 const _iJumpscareDelay = chance.integer({ min: (_iEventAudioDelay - 500), max: (_iEventAudioDelay*3.5) });
 
@@ -44,7 +43,7 @@ _eStartButton.addEventListener('click', e => {
 		_eMangle.classList.add('bite');
 		setTimeout(() => {
 			_sJumpscare.stop();
-			window.location.href = 'https://i.imgur.com/dKUJIuo.png';
+			window.location.href = '/EE/img/cat.png';
 		}, 750);
 	}, _iJumpscareDelay);
 });
